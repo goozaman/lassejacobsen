@@ -6,101 +6,50 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Homepage documents */
-interface HomepageDocumentData {
+/**
+ * Primary content in Text → Primary
+ *
+ */
+interface TextSliceDefaultPrimary {
     /**
-     * Hmm field in *Homepage*
+     * Text field in *Text → Primary*
      *
      * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.hmm
-     * - **Tab**: Main
+     * - **Placeholder**: Text with rich formatting
+     * - **API ID Path**: text.primary.content
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    hmm: prismicT.RichTextField;
-    /**
-     * Slice Zone field in *Homepage*
-     *
-     * - **Field Type**: Slice Zone
-     * - **Placeholder**: *None*
-     * - **API ID Path**: homepage.slices[]
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-     *
-     */
-    slices: prismicT.SliceZone<HomepageDocumentDataSlicesSlice>;
+    content: prismicT.RichTextField;
 }
 /**
- * Slice for *Homepage → Slice Zone*
- *
- */
-type HomepageDocumentDataSlicesSlice = TestSlice;
-/**
- * Homepage document from Prismic
- *
- * - **API ID**: `homepage`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
-export type AllDocumentTypes = HomepageDocument;
-/**
- * Primary content in Test → Primary
- *
- */
-interface TestSliceDefaultPrimary {
-    /**
-     * Title field in *Test → Primary*
-     *
-     * - **Field Type**: Title
-     * - **Placeholder**: This is where it all begins...
-     * - **API ID Path**: test.primary.title
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    title: prismicT.TitleField;
-    /**
-     * Description field in *Test → Primary*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: A nice description of your feature
-     * - **API ID Path**: test.primary.description
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    description: prismicT.RichTextField;
-}
-/**
- * Default variation for Test Slice
+ * Default variation for Text Slice
  *
  * - **API ID**: `default`
- * - **Description**: `Test`
+ * - **Description**: `Text`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TestSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TestSliceDefaultPrimary>, never>;
+export type TextSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<TextSliceDefaultPrimary>, never>;
 /**
- * Slice variation for *Test*
+ * Slice variation for *Text*
  *
  */
-type TestSliceVariation = TestSliceDefault;
+type TextSliceVariation = TextSliceDefault;
 /**
- * Test Shared Slice
+ * Text Shared Slice
  *
- * - **API ID**: `test`
- * - **Description**: `Test`
+ * - **API ID**: `text`
+ * - **Description**: `Text`
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type TestSlice = prismicT.SharedSlice<"test", TestSliceVariation>;
+export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
+        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
     }
     namespace Content {
-        export type { HomepageDocumentData, HomepageDocumentDataSlicesSlice, HomepageDocument, AllDocumentTypes, TestSliceDefaultPrimary, TestSliceDefault, TestSliceVariation, TestSlice };
+        export type { TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

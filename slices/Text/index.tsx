@@ -1,11 +1,14 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
-import type { SliceComponentProps } from '@prismicio/react'
-import type { Content } from '@prismicio/client'
+import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
+import { Content } from '@prismicio/client'
 
-export type TextProps = SliceComponentProps<Content.TextSlice>
-
-const Test = ({ slice }: TextProps) => (
+type TextProps = SliceComponentProps<Content.TextSlice>;
+/**
+ * @typedef {import("@prismicio/client").Content.TextSlice} TextSlice
+ * @typedef {import("@prismicio/react").SliceComponentProps<TextSlice>} TextProps
+ * @param { TextProps }
+ */
+const Text: React.FC<TextProps> = ({ slice }) => (
   <section>
     <span className="title">
       {
@@ -32,4 +35,4 @@ const Test = ({ slice }: TextProps) => (
   </section>
 )
 
-export default Test
+export default Text
