@@ -1,6 +1,76 @@
 {
   "slices": {
     "components": {
+      "nav_item": {
+        "library": "slices",
+        "id": "nav_item",
+        "name": "NavigationItem",
+        "description": "Text",
+        "model": {
+          "id": "nav_item",
+          "type": "SharedSlice",
+          "name": "NavigationItem",
+          "description": "Text",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Text",
+              "primary": {
+                "name": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Name",
+                    "placeholder": "Name of the link",
+                    "allowTargetBlank": false,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "name": [
+                {
+                  "type": "paragraph",
+                  "text": "Elit exercitation Lorem sit aute velit Lorem laboris commodo irure. Cupidatat fugiat enim ullamco cillum aliquip officia tempor eiusmod non irure laborum pariatur laboris aute reprehenderit. Cupidatat commodo id consectetur labore reprehenderit laborum laboris et non dolore tempor ipsum fugiat.",
+                  "spans": []
+                }
+              ],
+              "link": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              }
+            },
+            "slice_type": "nav_item"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
       "text": {
         "library": "slices",
         "id": "text",

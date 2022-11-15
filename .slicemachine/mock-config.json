@@ -1,5 +1,36 @@
 {
   "slices": {
-    "Text": {}
+    "Text": {},
+    "NavItem": {
+      "default": {
+        "primary": {
+          "name": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "NavigationItem": {
+      "default": {
+        "primary": {
+          "name": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {}
+      }
+    }
+  },
+  "_cts": {
+    "about": {},
+    "navigation": {},
+    "home": {},
+    "article": {}
   }
 }

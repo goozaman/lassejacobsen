@@ -6,6 +6,160 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
+/** Content for About documents */
+interface AboutDocumentData {
+    /**
+     * Profile field in *About*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about.profile
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    profile: prismicT.ImageField<never>;
+    /**
+     * Slice Zone field in *About*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<AboutDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *About → Slice Zone*
+ *
+ */
+type AboutDocumentDataSlicesSlice = TextSlice;
+/**
+ * About document from Prismic
+ *
+ * - **API ID**: `about`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutDocumentData>, "about", Lang>;
+/** Content for Article documents */
+interface ArticleDocumentData {
+    /**
+     * Title field in *Article*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    title: prismicT.KeyTextField;
+    /**
+     * Slice Zone field in *Article*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ArticleDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Article → Slice Zone*
+ *
+ */
+type ArticleDocumentDataSlicesSlice = TextSlice;
+/**
+ * Article document from Prismic
+ *
+ * - **API ID**: `article`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ArticleDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ArticleDocumentData>, "article", Lang>;
+/** Content for Home documents */
+type HomeDocumentData = Record<string, never>;
+/**
+ * Home document from Prismic
+ *
+ * - **API ID**: `home`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+/** Content for Navigation documents */
+type NavigationDocumentData = Record<string, never>;
+/**
+ * Navigation document from Prismic
+ *
+ * - **API ID**: `navigation`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
+export type AllDocumentTypes = AboutDocument | ArticleDocument | HomeDocument | NavigationDocument;
+/**
+ * Primary content in NavigationItem → Primary
+ *
+ */
+interface NavItemSliceDefaultPrimary {
+    /**
+     * Name field in *NavigationItem → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Name of the link
+     * - **API ID Path**: nav_item.primary.name
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    name: prismicT.RichTextField;
+    /**
+     * Link field in *NavigationItem → Primary*
+     *
+     * - **Field Type**: Link
+     * - **Placeholder**: *None*
+     * - **API ID Path**: nav_item.primary.link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkField;
+}
+/**
+ * Default variation for NavigationItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavItemSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<NavItemSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *NavigationItem*
+ *
+ */
+type NavItemSliceVariation = NavItemSliceDefault;
+/**
+ * NavigationItem Shared Slice
+ *
+ * - **API ID**: `nav_item`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type NavItemSlice = prismicT.SharedSlice<"nav_item", NavItemSliceVariation>;
 /**
  * Primary content in Text → Primary
  *
@@ -47,9 +201,9 @@ type TextSliceVariation = TextSliceDefault;
 export type TextSlice = prismicT.SharedSlice<"text", TextSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
-        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client;
+        (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { AboutDocumentData, AboutDocumentDataSlicesSlice, AboutDocument, ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocument, AllDocumentTypes, NavItemSliceDefaultPrimary, NavItemSliceDefault, NavItemSliceVariation, NavItemSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }
