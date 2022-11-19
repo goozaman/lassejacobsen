@@ -1,7 +1,7 @@
 {
-  "id": "text",
+  "id": "quote",
   "type": "SharedSlice",
-  "name": "Text",
+  "name": "Quote",
   "description": "Text",
   "variations": [
     {
@@ -11,13 +11,20 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Text",
       "primary": {
-        "content": {
+        "quote": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
-            "placeholder": "Text with rich formatting",
+            "label": "Quote",
+            "placeholder": "Quote without quotation marks",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "source": {
+          "type": "Text",
+          "config": {
+            "label": "Source",
+            "placeholder": "Source of the quote"
           }
         }
       },

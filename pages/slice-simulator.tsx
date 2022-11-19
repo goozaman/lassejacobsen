@@ -1,8 +1,8 @@
-import { SliceSimulator } from '@prismicio/slice-simulator-react'
-import { SliceZone } from '@prismicio/react'
+import { SliceSimulator } from "@prismicio/slice-simulator-react";
+import { SliceZone } from "@prismicio/react";
 
-import { components } from '../slices'
-import state from '../.slicemachine/libraries-state.json'
+import { components } from "../slices";
+import state from "../.slicemachine/libraries-state.json";
 
 const SliceSimulatorPage = () => {
   return (
@@ -12,16 +12,16 @@ const SliceSimulatorPage = () => {
       )}
       state={state}
     />
-  )
-}
+  );
+};
 
-export default SliceSimulatorPage
+export default SliceSimulatorPage;
 
 // Only include this page in development
 export const getStaticProps = async () => {
-  if (process.env.NODE_ENV === 'production') {
-    return { notFound: true }
+  if (process.env.NODE_ENV === "production") {
+    return { notFound: true };
   } else {
-    return { props: {} }
+    return { props: {} };
   }
-}
+};

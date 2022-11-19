@@ -1,22 +1,21 @@
-import React from 'react'
-import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
-import { Content } from '@prismicio/client'
+import React from "react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { Content } from "@prismicio/client";
+import { Bounded } from "../../components/Bounded";
+import * as prismicH from "@prismicio/helpers";
 
 type TextProps = SliceComponentProps<Content.TextSlice>;
 
 export const Text: React.FC<TextProps> = ({ slice }) => {
-  
   return (
-    <section>
-      <span className="title">
-        {
-          slice.primary.content ?
-          <PrismicRichText field={slice.primary.content}/>
-          : <h2>Template slice, update me!</h2>
-        }
-      </span>
-    </section>
-  )
-}
+    <Bounded as="section">
+      {prismicH.isFilled.richText(slice.primary.content) && (
+        <div className="font-serif leading-relaxed md:text-xl md:leading-relaxed">
+          <PrismicRichText field={slice.primary.content} />
+        </div>
+      )}
+    </Bounded>
+  );
+};
 
-export default Text
+export default Text;

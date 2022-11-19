@@ -112,6 +112,81 @@ type NavigationDocumentData = Record<string, never>;
 export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
 export type AllDocumentTypes = AboutDocument | ArticleDocument | HomeDocument | NavigationDocument;
 /**
+ * Primary content in Image → Primary
+ *
+ */
+interface ImageSliceDefaultPrimary {
+    /**
+     * Image field in *Image → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Caption field in *Image → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Optional - Caption under the image
+     * - **API ID Path**: image.primary.caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    caption: prismicT.RichTextField;
+}
+/**
+ * Item in Image → Items
+ *
+ */
+export interface ImageSliceDefaultItem {
+    /**
+     * Image field in *Image → Items*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image.items[].image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+    /**
+     * Caption field in *Image → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Optional - Caption under the image
+     * - **API ID Path**: image.items[].caption
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    caption: prismicT.RichTextField;
+}
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ImageSliceDefaultPrimary>, Simplify<ImageSliceDefaultItem>>;
+/**
+ * Slice variation for *Image*
+ *
+ */
+type ImageSliceVariation = ImageSliceDefault;
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
+/**
  * Primary content in NavigationItem → Primary
  *
  */
@@ -161,6 +236,55 @@ type NavItemSliceVariation = NavItemSliceDefault;
  */
 export type NavItemSlice = prismicT.SharedSlice<"nav_item", NavItemSliceVariation>;
 /**
+ * Primary content in Quote → Primary
+ *
+ */
+interface QuoteSliceDefaultPrimary {
+    /**
+     * Quote field in *Quote → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Quote without quotation marks
+     * - **API ID Path**: quote.primary.quote
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    quote: prismicT.RichTextField;
+    /**
+     * Source field in *Quote → Primary*
+     *
+     * - **Field Type**: Text
+     * - **Placeholder**: Source of the quote
+     * - **API ID Path**: quote.primary.source
+     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     *
+     */
+    source: prismicT.KeyTextField;
+}
+/**
+ * Default variation for Quote Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuoteSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<QuoteSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Quote*
+ *
+ */
+type QuoteSliceVariation = QuoteSliceDefault;
+/**
+ * Quote Shared Slice
+ *
+ * - **API ID**: `quote`
+ * - **Description**: `Text`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type QuoteSlice = prismicT.SharedSlice<"quote", QuoteSliceVariation>;
+/**
  * Primary content in Text → Primary
  *
  */
@@ -204,6 +328,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutDocumentData, AboutDocumentDataSlicesSlice, AboutDocument, ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocument, AllDocumentTypes, NavItemSliceDefaultPrimary, NavItemSliceDefault, NavItemSliceVariation, NavItemSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { AboutDocumentData, AboutDocumentDataSlicesSlice, AboutDocument, ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefaultItem, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavItemSliceDefaultPrimary, NavItemSliceDefault, NavItemSliceVariation, NavItemSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

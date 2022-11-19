@@ -25,6 +25,38 @@
         },
         "items": {}
       }
+    },
+    "Quote": {
+      "default": {
+        "primary": {
+          "quote": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Image": {
+      "default": {
+        "primary": {
+          "caption": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {
+          "caption": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
     }
   },
   "_cts": {

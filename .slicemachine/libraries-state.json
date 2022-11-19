@@ -1,6 +1,122 @@
 {
   "slices": {
     "components": {
+      "image": {
+        "library": "slices",
+        "id": "image",
+        "name": "Image",
+        "description": "Text",
+        "model": {
+          "id": "image",
+          "type": "SharedSlice",
+          "name": "Image",
+          "description": "Text",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Text",
+              "primary": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "caption": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Caption",
+                    "placeholder": "Optional - Caption under the image",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,strong"
+                  }
+                }
+              },
+              "items": {
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "caption": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Caption",
+                    "placeholder": "Optional - Caption under the image",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,strong"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {
+                "image": {
+                  "dimensions": {
+                    "width": 900,
+                    "height": 500
+                  },
+                  "alt": null,
+                  "copyright": null,
+                  "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+                },
+                "caption": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ad deserunt nostrud non et aute occaecat proident irure anim excepteur occaecat. Voluptate labore voluptate fugiat sunt sunt duis. Laborum non culpa et esse amet quis occaecat sit amet nisi ex reprehenderit esse.",
+                    "spans": []
+                  }
+                ]
+              }
+            ],
+            "primary": {
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": null,
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
+              },
+              "caption": [
+                {
+                  "type": "paragraph",
+                  "text": "Irure ullamco pariatur amet. Irure ullamco et nostrud.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "image"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/k-netlight-clp/dev/christianlebeck/.slicemachine/assets/slices/Image/default/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
+      },
       "nav_item": {
         "library": "slices",
         "id": "nav_item",
@@ -71,6 +187,78 @@
         },
         "screenshotPaths": {}
       },
+      "quote": {
+        "library": "slices",
+        "id": "quote",
+        "name": "Quote",
+        "description": "Text",
+        "model": {
+          "id": "quote",
+          "type": "SharedSlice",
+          "name": "Quote",
+          "description": "Text",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Text",
+              "primary": {
+                "quote": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Quote",
+                    "placeholder": "Quote without quotation marks",
+                    "allowTargetBlank": true,
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "source": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Source",
+                    "placeholder": "Source of the quote"
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "quote": [
+                {
+                  "type": "paragraph",
+                  "text": "Nisi Lorem ad nulla eu esse cupidatat officia non culpa. Officia elit laborum ut amet aute enim sit ea cupidatat veniam ipsum reprehenderit amet. Labore ipsum laboris magna est ex laborum amet reprehenderit ex est consectetur occaecat fugiat ad est.",
+                  "spans": []
+                }
+              ],
+              "source": "laugh"
+            },
+            "slice_type": "quote"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/k-netlight-clp/dev/christianlebeck/.slicemachine/assets/slices/Quote/default/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
+      },
       "text": {
         "library": "slices",
         "id": "text",
@@ -127,7 +315,13 @@
           "fileName": "index",
           "extension": "tsx"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/k-netlight-clp/dev/christianlebeck/.slicemachine/assets/slices/Text/default/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
       }
     }
   }
