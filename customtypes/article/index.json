@@ -9,14 +9,34 @@
         "type": "UID",
         "config": {
           "label": "UID",
-          "placeholder": ""
+          "placeholder": "URL slug for the article"
         }
       },
       "title": {
-        "type": "Text",
+        "type": "StructuredText",
         "config": {
           "label": "Title",
+          "placeholder": "Title for the article",
+          "allowTargetBlank": false,
+          "single": "heading1"
+        }
+      },
+      "publishDate": {
+        "type": "Date",
+        "config": {
+          "label": "Publish Date",
           "placeholder": ""
+        }
+      },
+      "featuredImage": {
+        "type": "Image",
+        "config": {
+          "label": "Featured Image",
+          "constraint": {
+            "width": 2000,
+            "height": 1500
+          },
+          "thumbnails": []
         }
       },
       "slices": {
@@ -25,6 +45,12 @@
         "config": {
           "choices": {
             "text": {
+              "type": "SharedSlice"
+            },
+            "image": {
+              "type": "SharedSlice"
+            },
+            "quote": {
               "type": "SharedSlice"
             }
           }

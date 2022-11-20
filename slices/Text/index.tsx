@@ -9,9 +9,9 @@ type TextProps = SliceComponentProps<Content.TextSlice>;
 export const Text: React.FC<TextProps> = ({ slice }) => {
   return (
     <Bounded as="section">
-      {prismicH.isFilled.richText(slice.primary.content) && (
+      {prismicH.isFilled.richText(slice.primary.text) && (
         <div className="font-serif leading-relaxed md:text-xl md:leading-relaxed">
-          <PrismicRichText field={slice.primary.content} />
+          <PrismicRichText field={slice.primary.text} />
         </div>
       )}
     </Bounded>

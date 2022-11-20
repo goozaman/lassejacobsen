@@ -11,7 +11,23 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "title": "wife",
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Experience",
+        "spans": []
+      }
+    ],
+    "publishDate": "2015-01-05",
+    "featuredImage": {
+      "dimensions": {
+        "width": 2000,
+        "height": 1500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa"
+    },
     "slices": []
   }
 }

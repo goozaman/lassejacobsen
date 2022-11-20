@@ -11,7 +11,7 @@
       "version": "sktwi1xtmkfgx8626",
       "description": "Text",
       "primary": {
-        "content": {
+        "text": {
           "type": "StructuredText",
           "config": {
             "label": "Text",

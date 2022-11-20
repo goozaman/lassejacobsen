@@ -2,6 +2,8 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { createClient } from "../prismicio";
 import { Page } from "../components/Page";
 import { PrismicNextImage } from "@prismicio/next";
+import { PrismicText } from "@prismicio/react";
+import Article from "../components/Article";
 
 export const getStaticProps = async ({
   previewData,
@@ -37,7 +39,9 @@ const Home: React.FC<HomeProps> = ({ articles, about }) => {
 
       <div>
         {articles.map((article) => (
-          <div key={article.id}>{article.data.title}</div>
+          <Article key={article.id} article={article} />
+          // <PrismicText key={article.id} field={article.data.title} />
+          // <div key={article.id}/>
         ))}
       </div>
     </Page>

@@ -1,6 +1,17 @@
 {
   "slices": {
-    "Text": {},
+    "Text": {
+      "default": {
+        "primary": {
+          "text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
     "NavItem": {
       "default": {
         "primary": {
@@ -63,6 +74,13 @@
     "about": {},
     "navigation": {},
     "home": {},
-    "article": {}
+    "article": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
   }
 }

@@ -51,14 +51,36 @@ interface ArticleDocumentData {
     /**
      * Title field in *Article*
      *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
+     * - **Field Type**: Title
+     * - **Placeholder**: Title for the article
      * - **API ID Path**: article.title
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    title: prismicT.KeyTextField;
+    title: prismicT.TitleField;
+    /**
+     * Publish Date field in *Article*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.publishDate
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    publishDate: prismicT.DateField;
+    /**
+     * Featured Image field in *Article*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: article.featuredImage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    featuredImage: prismicT.ImageField<never>;
     /**
      * Slice Zone field in *Article*
      *
@@ -75,7 +97,7 @@ interface ArticleDocumentData {
  * Slice for *Article → Slice Zone*
  *
  */
-type ArticleDocumentDataSlicesSlice = TextSlice;
+type ArticleDocumentDataSlicesSlice = TextSlice | ImageSlice | QuoteSlice;
 /**
  * Article document from Prismic
  *
@@ -294,11 +316,11 @@ interface TextSliceDefaultPrimary {
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: Text with rich formatting
-     * - **API ID Path**: text.primary.content
+     * - **API ID Path**: text.primary.text
      * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    content: prismicT.RichTextField;
+    text: prismicT.RichTextField;
 }
 /**
  * Default variation for Text Slice
