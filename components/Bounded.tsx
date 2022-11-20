@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { FunctionComponent, PropsWithChildren } from "react";
 
 interface BoundedProps extends PropsWithChildren {
-  as: keyof JSX.IntrinsicElements;
+  as?: keyof JSX.IntrinsicElements;
   size?: "base" | "small" | "wide" | "widest";
   className?: string;
 }

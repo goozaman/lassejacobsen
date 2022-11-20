@@ -12,7 +12,7 @@ import {
 } from "../.slicemachine/prismicio";
 import Link from "next/link";
 
-interface ArticleProps {
+export interface ArticleProps {
   article: Content.ArticleDocument<string>;
 }
 
@@ -22,15 +22,18 @@ export type DateOrTimestampField =
   | null
   | undefined;
 
+export const getArticleDate = (article: Content.ArticleDocument<string>) =>
+  prismicH.asDate(
+    article.data.publishDate ||
+      (article.first_publication_date as DateOrTimestampField)
+  ) as Date;
+
 const Article: FunctionComponent<ArticleProps> = ({ article }) => {
   const featuredImage =
     (prismicH.isFilled.image(article.data.featuredImage) &&
       article.data.featuredImage) ||
     findFirstImage(article.data.slices);
-  const date = prismicH.asDate(
-    article.data.publishDate ||
-      (article.first_publication_date as DateOrTimestampField)
-  ) as Date;
+  const date = getArticleDate(article);
   const excerpt = getExcerpt(article.data.slices);
 
   console.log(article);

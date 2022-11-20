@@ -2,8 +2,8 @@ import clsx from "clsx";
 import { FunctionComponent, PropsWithChildren } from "react";
 
 interface HeadingProps extends PropsWithChildren {
-  as: keyof JSX.IntrinsicElements;
-  size?: "base" | "small" | "wide" | "widest";
+  as?: keyof JSX.IntrinsicElements;
+  size?: "xl" | "2xl" | "3xl" | "4xl";
   className?: string;
 }
 
