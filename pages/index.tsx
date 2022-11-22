@@ -32,7 +32,7 @@ const HomePage: React.FC<HomePageProps> = ({ articles, about, home }) => {
 
 const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
   return (
-    <div className="mx-auto flex h-[calc(100vh-56px)] max-w-6xl flex-col justify-between px-4 pt-4 md:h-[calc(100vh-120px)] md:flex-row">
+    <div className="mx-auto flex h-[calc(100vh-56px)] max-w-6xl flex-col justify-between md:h-[calc(100vh-120px)] md:flex-row">
       <div className="flex w-full flex-col align-baseline md:w-1/2 md:p-12">
         <Heading as="h2">
           <PrismicText field={home.data.heroTitle} />
@@ -48,6 +48,10 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
           className="max-h-full max-w-full object-contain"
           field={home.data.heroImage}
         />
+      </div>
+
+      <div className="absolute bottom-0 left-[calc(50%-6px)] text-2xl">
+      ↓
       </div>
     </div>
   );
