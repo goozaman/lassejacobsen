@@ -27,7 +27,9 @@ export const getArticleDate = (article: Content.ArticleDocument<string>) =>
       (article.first_publication_date as DateOrTimestampField)
   ) as Date;
 
-export const ArticlePreview: FunctionComponent<ArticleProps> = ({ article }) => {
+export const ArticlePreview: FunctionComponent<ArticleProps> = ({
+  article,
+}) => {
   const featuredImage =
     (prismicH.isFilled.image(article.data.featuredImage) &&
       article.data.featuredImage) ||
@@ -38,7 +40,7 @@ export const ArticlePreview: FunctionComponent<ArticleProps> = ({ article }) => 
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
       <PrismicLink document={article}>
-      <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
+        <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
           {prismicH.isFilled.image(featuredImage) && (
             <PrismicNextImage
               field={featuredImage}
@@ -50,7 +52,7 @@ export const ArticlePreview: FunctionComponent<ArticleProps> = ({ article }) => 
       </PrismicLink>
       <div className="grid grid-cols-1 gap-3 md:col-span-2">
         <Heading as="h2">
-          <PrismicLink document={article} >
+          <PrismicLink document={article}>
             <PrismicText field={article.data.title} />
           </PrismicLink>
         </Heading>

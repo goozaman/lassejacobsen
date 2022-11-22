@@ -10,5 +10,29 @@
   "linked_documents": [],
   "lang": "en-us",
   "alternate_languages": [],
-  "data": {}
+  "data": {
+    "heroTitle": [
+      {
+        "type": "heading1",
+        "text": "Weather",
+        "spans": []
+      }
+    ],
+    "heroText": [
+      {
+        "type": "paragraph",
+        "text": "Cupidatat id est proident proident.",
+        "spans": []
+      }
+    ],
+    "heroImage": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
+    }
+  }
 }

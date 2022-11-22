@@ -2,8 +2,10 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { createClient } from "../prismicio";
 import { Page } from "../components/Page";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicText } from "@prismicio/react";
-import {ArticlePreview} from "../components/Article";
+import { PrismicRichText, PrismicText } from "@prismicio/react";
+import { ArticlePreview } from "../components/Article";
+import { Heading } from "../components/Heading";
+import { Bounded } from "../components/Bounded";
 
 export const getStaticProps = async ({
   previewData,
@@ -11,41 +13,44 @@ export const getStaticProps = async ({
   const client = createClient({ previewData });
   const articles = await client.getAllByType("article");
   const about = await client.getSingle("about");
+  const home = await client.getSingle("home");
 
   return {
-    props: { articles, about },
+    props: { articles, about, home },
   };
 };
 
-type HomeProps = InferGetStaticPropsType<typeof getStaticProps>;
+type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-const Home: React.FC<HomeProps> = ({ articles, about }) => {
+const HomePage: React.FC<HomePageProps> = ({ articles, about, home }) => {
   return (
     <Page>
-      <div className="flex flex-col gap-8">
-        <div>
-          {about.data.profile && (
-            <PrismicNextImage
-              className="mx-auto w-40 rounded-full p-4"
-              field={about.data.profile}
-            />
-          )}
-        </div>
-        <div className="spin flex flex-col items-center">
-          <h1>Christian Lebeck</h1>
-          <span>Doing something</span>
-        </div>
-      </div>
-
-      <div>
-        {articles.map((article) => (
-          <ArticlePreview key={article.id} article={article} />
-          // <PrismicText key={article.id} field={article.data.title} />
-          // <div key={article.id}/>
-        ))}
-      </div>
+      <Hero home={home} />
     </Page>
   );
 };
 
-export default Home;
+const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
+  return (
+    <div className="mx-auto flex h-[calc(100vh-56px)] max-w-6xl flex-col justify-between px-4 pt-4 md:h-[calc(100vh-120px)] md:flex-row">
+      <div className="flex w-full flex-col align-baseline md:w-1/2 md:p-12">
+        <Heading as="h2">
+          <PrismicText field={home.data.heroTitle} />
+        </Heading>
+
+        <div className="mt-6">
+          <PrismicRichText field={home.data.heroText} />
+        </div>
+      </div>
+
+      <div className="flex max-h-[50%] w-full items-end pr-2 md:max-h-full md:w-1/2 md:pl-12">
+        <PrismicNextImage
+          className="max-h-full max-w-full object-contain"
+          field={home.data.heroImage}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;

@@ -73,7 +73,20 @@
   "_cts": {
     "about": {},
     "navigation": {},
-    "home": {},
+    "home": {
+      "heroTitle": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "heroText": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      }
+    },
     "article": {
       "title": {
         "config": {

@@ -2,14 +2,14 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  async rewrites() {
-    return [
-      {
-        source: "/articles",
-        destination: "/",
-      },
-    ];
-  },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: "/articles",
+  //       destination: "/",
+  //     },
+  //   ];
+  // },
 };
 
 module.exports = nextConfig;

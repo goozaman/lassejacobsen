@@ -109,7 +109,41 @@ type ArticleDocumentDataSlicesSlice = TextSlice | ImageSlice | QuoteSlice;
  */
 export type ArticleDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ArticleDocumentData>, "article", Lang>;
 /** Content for Home documents */
-type HomeDocumentData = Record<string, never>;
+interface HomeDocumentData {
+    /**
+     * Hero Title field in *Home*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.heroTitle
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heroTitle: prismicT.TitleField;
+    /**
+     * Hero Text field in *Home*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.heroText
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    heroText: prismicT.RichTextField;
+    /**
+     * Hero Image field in *Home*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home.heroImage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    heroImage: prismicT.ImageField<never>;
+}
 /**
  * Home document from Prismic
  *
