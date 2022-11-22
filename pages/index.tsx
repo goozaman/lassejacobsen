@@ -3,7 +3,7 @@ import { createClient } from "../prismicio";
 import { Page } from "../components/Page";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
-import Article from "../components/Article";
+import {ArticlePreview} from "../components/Article";
 
 export const getStaticProps = async ({
   previewData,
@@ -39,7 +39,7 @@ const Home: React.FC<HomeProps> = ({ articles, about }) => {
 
       <div>
         {articles.map((article) => (
-          <Article key={article.id} article={article} />
+          <ArticlePreview key={article.id} article={article} />
           // <PrismicText key={article.id} field={article.data.title} />
           // <div key={article.id}/>
         ))}

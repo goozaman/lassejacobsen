@@ -5,7 +5,6 @@ import { Heading } from "./Heading";
 import { Content } from "@prismicio/client";
 import { FunctionComponent } from "react";
 import {
-  ArticleDocument,
   ArticleDocumentData,
   ImageSlice,
   TextSlice,
@@ -28,7 +27,7 @@ export const getArticleDate = (article: Content.ArticleDocument<string>) =>
       (article.first_publication_date as DateOrTimestampField)
   ) as Date;
 
-const Article: FunctionComponent<ArticleProps> = ({ article }) => {
+export const ArticlePreview: FunctionComponent<ArticleProps> = ({ article }) => {
   const featuredImage =
     (prismicH.isFilled.image(article.data.featuredImage) &&
       article.data.featuredImage) ||
@@ -36,12 +35,10 @@ const Article: FunctionComponent<ArticleProps> = ({ article }) => {
   const date = getArticleDate(article);
   const excerpt = getExcerpt(article.data.slices);
 
-  console.log(article);
-
   return (
     <li className="grid grid-cols-1 items-start gap-6 md:grid-cols-3 md:gap-8">
-      <Link href={article.url ?? `/articles/${article.uid}`} tabIndex={-1}>
-        <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
+      <PrismicLink document={article}>
+      <div className="aspect-w-4 aspect-h-3 relative bg-gray-100">
           {prismicH.isFilled.image(featuredImage) && (
             <PrismicNextImage
               field={featuredImage}
@@ -50,12 +47,12 @@ const Article: FunctionComponent<ArticleProps> = ({ article }) => {
             />
           )}
         </div>
-      </Link>
+      </PrismicLink>
       <div className="grid grid-cols-1 gap-3 md:col-span-2">
         <Heading as="h2">
-          <Link href={article.url ?? `/articles/${article.uid}`} tabIndex={-1}>
+          <PrismicLink document={article} >
             <PrismicText field={article.data.title} />
-          </Link>
+          </PrismicLink>
         </Heading>
         <p className="font-serif italic tracking-tighter text-slate-500">
           {dateFormatter.format(date)}
@@ -102,5 +99,3 @@ const getExcerpt = (slices: ArticleDocumentData["slices"]) => {
     return excerpt;
   }
 };
-
-export default Article;

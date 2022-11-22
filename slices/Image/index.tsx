@@ -11,7 +11,7 @@ const Image: React.FC<ImageProps> = ({ slice }) => {
   const image = slice.primary.image;
 
   return (
-    <Bounded as="section">
+    <Bounded as="section" size="widest">
       {" "}
       {/* size={slice.variation === "wide" ? "widest" : "base"}> */}
       <figure className="grid grid-cols-1 gap-4">

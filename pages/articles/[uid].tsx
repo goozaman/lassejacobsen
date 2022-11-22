@@ -1,7 +1,7 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next";
 import { createClient } from "../../prismicio";
 import * as prismicH from "@prismicio/helpers";
-import { PrismicLink, PrismicText, SliceZone } from "@prismicio/react";
+import { PrismicText, SliceZone } from "@prismicio/react";
 import { components } from "../../slices";
 import { Page } from "../../components/Page";
 import Head from "next/head";
