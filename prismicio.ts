@@ -11,8 +11,8 @@ const routes = [
   },
   {
     type: "project",
-    path: "/projects/:uid"
-  }
+    path: "/projects/:uid",
+  },
 ];
 
 export function createClient({

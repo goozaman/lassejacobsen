@@ -1,7 +1,11 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicLink, PrismicText } from "@prismicio/react";
 import { FunctionComponent } from "react";
-import { ImageSlice, ProjectDocument, ProjectDocumentData } from "../.slicemachine/prismicio";
+import {
+  ImageSlice,
+  ProjectDocument,
+  ProjectDocumentData,
+} from "../.slicemachine/prismicio";
 import { Heading } from "./Heading";
 import * as prismicH from "@prismicio/helpers";
 
@@ -12,20 +16,16 @@ interface ProjectPreviewProps {
 export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
   project,
 }) => {
-  
-  const featuredImage = 
-  (prismicH.isFilled.image(project.data.featuredImage) &&
-  project.data.featuredImage) ||
-  findFirstImage(project.data.slices);
-
+  const featuredImage =
+    (prismicH.isFilled.image(project.data.featuredImage) &&
+      project.data.featuredImage) ||
+    findFirstImage(project.data.slices);
 
   return (
-    <div className="flex flex-col md:max-w-[48%] justify-between w-full">
+    <div className="flex w-full flex-col justify-between md:max-w-[48%]">
       <PrismicLink document={project} className="mb-4">
         {prismicH.isFilled.image(featuredImage) && (
-          <PrismicNextImage
-            field={featuredImage}
-          />
+          <PrismicNextImage field={featuredImage} />
         )}
       </PrismicLink>
       <div className="mb-6">
@@ -37,7 +37,7 @@ export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
         <PrismicText field={project.data.featuredText} />
       </div>
     </div>
-  )
+  );
 };
 
 const findFirstImage = (slices: ProjectDocumentData["slices"]) => {

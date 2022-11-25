@@ -5,8 +5,13 @@ import { Bounded } from "./Bounded";
 
 export const Navigation = () => {
   return (
-    <Bounded as="nav" size="widest" className="py-0 md:p-0 lg:py-0" innerClassName="mx-auto flex justify-between py-4">
-      <div className="text-lg font-sans font-semibold tracking-tighter text-slate-800">
+    <Bounded
+      as="nav"
+      size="widest"
+      className="py-0 md:p-0 lg:py-0"
+      innerClassName="mx-auto flex justify-between py-4"
+    >
+      <div className="font-sans text-lg font-semibold tracking-tighter text-slate-800">
         Christian Lebeck
       </div>
 
