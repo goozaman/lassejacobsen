@@ -33,13 +33,23 @@ const HomePage: React.FC<HomePageProps> = ({
     <Page>
       <Hero home={home} />
 
-      <div className="h-[75vh]">
+      <div className="min-h-[75vh]">
         <Bounded as="section" size="widest">
           <Heading as="h2">Projects</Heading>
+          <p className="mb-5">I like to try new things and gain different experiences. Check out some of the last projects, that I&apos;ve dedicated my time to.</p>
 
-          {projects.map((project) => (
-            <ProjectPreview key={project.id} project={project} />
-          ))}
+          <div className="flex md:gap-6 gap-12 md:flex-row flex-col">
+            {projects.map((project) => (
+              <ProjectPreview key={project.id} project={project} />
+            ))}
+          </div>
+        
+        </Bounded>
+      </div>
+
+      <div className="bg-slate-800 text-white">
+        <Bounded as="section" size="widest">
+          Contact me
         </Bounded>
       </div>
     </Page>
