@@ -8,7 +8,7 @@ export const Navigation = () => {
     <Bounded
       as="nav"
       size="widest"
-      className="py-0 md:p-0 lg:py-0"
+      noYPadding
       innerClassName="mx-auto flex justify-between py-4"
     >
       <div className="font-sans text-lg font-semibold tracking-tighter text-slate-800">

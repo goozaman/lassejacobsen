@@ -22,7 +22,7 @@ export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
     findFirstImage(project.data.slices);
 
   return (
-    <div className="flex w-full flex-col justify-between md:max-w-[48%]">
+    <div className="flex w-full flex-col justify-between md:max-w-[40%]">
       <PrismicLink document={project} className="mb-4">
         {prismicH.isFilled.image(featuredImage) && (
           <PrismicNextImage field={featuredImage} />

@@ -65,10 +65,11 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
     <Bounded
       as="section"
       size="widest"
-      className="px-4 py-0 md:h-[calc(100vh-60px)] md:py-0 md:px-6 lg:py-0"
+      noYPadding
+      className="px-4 md:h-[calc(100vh-60px)]"
       innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col"
     >
-      <div className="flex w-full flex-col pt-3 align-baseline md:w-1/2 md:pt-36">
+      <div className="flex w-full flex-col pt-3 align-baseline md:w-1/2 md:pt-36 md:pr-12">
         <Heading as="h2">
           <PrismicText field={home.data.heroTitle} />
         </Heading>
@@ -78,7 +79,7 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
         </div>
       </div>
 
-      <div className="flex w-full items-end md:max-h-full md:w-1/2 ">
+      <div className="flex w-full items-end md:max-h-full md:w-1/2 md:pl-12">
         <PrismicNextImage
           className="max-h-full max-w-full object-contain"
           field={home.data.heroImage}
