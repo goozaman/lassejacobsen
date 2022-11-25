@@ -35,10 +35,10 @@ const HomePage: React.FC<HomePageProps> = ({
 
       <div className="min-h-[75vh]">
         <Bounded as="section" size="widest">
-          <Heading as="h2">Projects</Heading>
-          <p className="mb-5">I like to try new things and gain different experiences. Check out some of the last projects, that I&apos;ve dedicated my time to.</p>
+          <Heading as="h2" className="mb-5">Projects</Heading>
+          <p className="mb-10">I like to try new things and gain different experiences. Check out some of the last projects, that I&apos;ve dedicated my time to.</p>
 
-          <div className="flex md:gap-6 gap-12 md:flex-row flex-col">
+          <div className="flex md:flex-row flex-col flex-wrap justify-between gap-x-2 gap-y-6">
             {projects.map((project) => (
               <ProjectPreview key={project.id} project={project} />
             ))}
@@ -58,8 +58,8 @@ const HomePage: React.FC<HomePageProps> = ({
 
 const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
   return (
-    <div className="mx-auto flex h-[calc(100vh-56px)] max-w-6xl flex-col justify-between md:h-[calc(100vh-120px)] md:flex-row">
-      <div className="flex w-full flex-col align-baseline md:w-1/2 md:p-12">
+    <Bounded as="section" size="widest" className="px-4 py-0 md:py-0 md:px-6 lg:py-0 md:h-[calc(100vh-60px)]" innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col">
+      <div className="flex w-full flex-col align-baseline md:w-1/2 pt-3 md:pt-36">
         <Heading as="h2">
           <PrismicText field={home.data.heroTitle} />
         </Heading>
@@ -69,7 +69,7 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
         </div>
       </div>
 
-      <div className="flex max-h-[50%] w-full items-end pr-2 md:max-h-full md:w-1/2 md:pl-12">
+      <div className="flex w-full items-end md:max-h-full md:w-1/2 ">
         <PrismicNextImage
           className="max-h-full max-w-full object-contain"
           field={home.data.heroImage}
@@ -77,7 +77,7 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
       </div>
 
       <div className="absolute bottom-0 left-[calc(50%-6px)] text-2xl">↓</div>
-    </div>
+    </Bounded>
   );
 };
 

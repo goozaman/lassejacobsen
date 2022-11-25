@@ -20,7 +20,7 @@ export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
 
 
   return (
-    <div className="flex flex-col md:w-1/2 w-full">
+    <div className="flex flex-col md:max-w-[48%] justify-between w-full">
       <PrismicLink document={project} className="mb-4">
         {prismicH.isFilled.image(featuredImage) && (
           <PrismicNextImage
@@ -29,7 +29,7 @@ export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
         )}
       </PrismicLink>
       <div className="mb-6">
-        <Heading as="h2" className="mb-4">
+        <Heading as="h3" size="2xl" className="mb-4">
           <PrismicLink document={project}>
             <PrismicText field={project.data.title} />
           </PrismicLink>

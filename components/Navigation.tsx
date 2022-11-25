@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { PropsWithChildren } from "react";
+import { Bounded } from "./Bounded";
 
 export const Navigation = () => {
   return (
-    <nav className="mx-auto flex max-w-6xl justify-between p-4 md:p-12">
-      <div className="text-l font-sans font-semibold tracking-tighter text-slate-800">
+    <Bounded as="nav" size="widest" className="py-0 md:p-0 lg:py-0" innerClassName="mx-auto flex justify-between py-4">
+      <div className="text-lg font-sans font-semibold tracking-tighter text-slate-800">
         Christian Lebeck
       </div>
 
@@ -14,7 +15,7 @@ export const Navigation = () => {
         {/* <NavItem href="/articles">Articles</NavItem> */}
         <NavItem href="/contact">Contact</NavItem>
       </div>
-    </nav>
+    </Bounded>
   );
 };
 
