@@ -166,7 +166,69 @@ type NavigationDocumentData = Record<string, never>;
  * @typeParam Lang - Language API ID of the document.
  */
 export type NavigationDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<NavigationDocumentData>, "navigation", Lang>;
-export type AllDocumentTypes = AboutDocument | ArticleDocument | HomeDocument | NavigationDocument;
+/** Content for Project documents */
+interface ProjectDocumentData {
+    /**
+     * Title field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.RichTextField;
+    /**
+     * Featured Image field in *Project*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.featuredImage
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    featuredImage: prismicT.ImageField<never>;
+    /**
+     * Featured Text field in *Project*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.featuredText
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    featuredText: prismicT.RichTextField;
+    /**
+     * Slice Zone field in *Project*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ProjectDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Project → Slice Zone*
+ *
+ */
+type ProjectDocumentDataSlicesSlice = TextSlice | ImageSlice | QuoteSlice;
+/**
+ * Project document from Prismic
+ *
+ * - **API ID**: `project`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProjectDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<Simplify<ProjectDocumentData>, "project", Lang>;
+export type AllDocumentTypes = AboutDocument | ArticleDocument | HomeDocument | NavigationDocument | ProjectDocument;
 /**
  * Primary content in Image → Primary
  *
@@ -384,6 +446,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutDocumentData, AboutDocumentDataSlicesSlice, AboutDocument, ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefaultItem, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavItemSliceDefaultPrimary, NavItemSliceDefault, NavItemSliceVariation, NavItemSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { AboutDocumentData, AboutDocumentDataSlicesSlice, AboutDocument, ArticleDocumentData, ArticleDocumentDataSlicesSlice, ArticleDocument, HomeDocumentData, HomeDocument, NavigationDocumentData, NavigationDocument, ProjectDocumentData, ProjectDocumentDataSlicesSlice, ProjectDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefaultItem, ImageSliceDefault, ImageSliceVariation, ImageSlice, NavItemSliceDefaultPrimary, NavItemSliceDefault, NavItemSliceVariation, NavItemSlice, QuoteSliceDefaultPrimary, QuoteSliceDefault, QuoteSliceVariation, QuoteSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

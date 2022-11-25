@@ -3,7 +3,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicText } from "@prismicio/react";
 import { createClient } from "../../prismicio";
 import { Page } from "../../components/Page";
-import { ArticlePreview } from "../../components/Article";
+import { ArticlePreview } from "../../components/ArticlePreview";
 
 export const getStaticProps = async ({
   previewData,

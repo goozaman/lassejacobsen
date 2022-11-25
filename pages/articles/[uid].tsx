@@ -7,7 +7,7 @@ import { Page } from "../../components/Page";
 import Head from "next/head";
 import { Bounded } from "../../components/Bounded";
 import { Heading } from "../../components/Heading";
-import { getArticleDate } from "../../components/Article";
+import { getArticleDate } from "../../components/ArticlePreview";
 import { HorizontalDivider } from "../../components/HorizontalDivider";
 import { FunctionComponent } from "react";
 import Link from "next/link";

@@ -3,9 +3,9 @@ import { createClient } from "../prismicio";
 import { Page } from "../components/Page";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, PrismicText } from "@prismicio/react";
-import { ArticlePreview } from "../components/Article";
 import { Heading } from "../components/Heading";
 import { Bounded } from "../components/Bounded";
+import { ProjectPreview } from "../components/ProjectPreview";
 
 export const getStaticProps = async ({
   previewData,
@@ -14,18 +14,29 @@ export const getStaticProps = async ({
   const articles = await client.getAllByType("article");
   const about = await client.getSingle("about");
   const home = await client.getSingle("home");
+  const projects = await client.getAllByType("project");
 
   return {
-    props: { articles, about, home },
+    props: { articles, about, home, projects },
   };
 };
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-const HomePage: React.FC<HomePageProps> = ({ articles, about, home }) => {
+const HomePage: React.FC<HomePageProps> = ({ articles, about, home, projects }) => {
   return (
     <Page>
       <Hero home={home} />
+
+      <div className="h-[75vh]">
+        <Bounded as="section" size="widest">
+          <Heading as="h2">Projects</Heading>
+
+          {projects.map((project) => (
+            <ProjectPreview key={project.id} project={project} />
+          ))}
+        </Bounded>
+      </div>
     </Page>
   );
 };
