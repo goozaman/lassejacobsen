@@ -23,7 +23,12 @@ export const getStaticProps = async ({
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-const HomePage: React.FC<HomePageProps> = ({ articles, about, home, projects }) => {
+const HomePage: React.FC<HomePageProps> = ({
+  articles,
+  about,
+  home,
+  projects,
+}) => {
   return (
     <Page>
       <Hero home={home} />
@@ -61,9 +66,7 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
         />
       </div>
 
-      <div className="absolute bottom-0 left-[calc(50%-6px)] text-2xl">
-      ↓
-      </div>
+      <div className="absolute bottom-0 left-[calc(50%-6px)] text-2xl">↓</div>
     </div>
   );
 };

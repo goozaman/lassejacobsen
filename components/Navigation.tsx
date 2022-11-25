@@ -4,8 +4,10 @@ import { PropsWithChildren } from "react";
 
 export const Navigation = () => {
   return (
-    <nav className="flex justify-between max-w-6xl mx-auto p-4 md:p-12">
-      <div className="font-sans font-semibold tracking-tighter text-slate-800 text-l">Christian Lebeck</div>
+    <nav className="mx-auto flex max-w-6xl justify-between p-4 md:p-12">
+      <div className="text-l font-sans font-semibold tracking-tighter text-slate-800">
+        Christian Lebeck
+      </div>
 
       <div className="flex gap-10">
         <NavItem href="/">About</NavItem>

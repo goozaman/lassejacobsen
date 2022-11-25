@@ -18,7 +18,26 @@ export const getStaticProps = async ({
 type ContactPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const ContactPage: FunctionComponent<ContactPageProps> = () => {
-  return <Page>Contact me!</Page>;
+  const handleSubmit = () => {
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: "Test",
+        email: "123456asdasd@mailinator.com",
+        message: "test",
+      }),
+    });
+  };
+
+  return (
+    <Page>
+      Contact me!<button onClick={handleSubmit}>here</button>
+    </Page>
+  );
 };
 
 export default ContactPage;
