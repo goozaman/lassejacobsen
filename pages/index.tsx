@@ -16,10 +16,10 @@ export const getStaticProps = async ({
   const home = await client.getSingle("home");
   const projects = await client.getAllByType("project", {
     orderings: {
-      field: 'my.project.endDate',
-      direction: 'desc',
+      field: "my.project.endDate",
+      direction: "desc",
     },
-  });  
+  });
 
   return {
     props: { articles, about, home, projects },
@@ -65,7 +65,7 @@ const HomePage: React.FC<HomePageProps> = ({
   );
 };
 
-const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
+export const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
   return (
     <Bounded
       as="section"

@@ -1,0 +1,31 @@
+{
+  "id": "mock-doc-id",
+  "url": null,
+  "type": "contact",
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "image": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": null,
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
+    },
+    "title": [
+      {
+        "type": "paragraph",
+        "text": "Magna sunt occaecat proident aute velit anim cillum dolore mollit. Esse sit et aute enim proident exercitation aliquip dolor velit qui non non occaecat nisi ipsum.",
+        "spans": []
+      }
+    ]
+  }
+}
