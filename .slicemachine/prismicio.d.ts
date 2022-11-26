@@ -202,6 +202,17 @@ interface ProjectDocumentData {
      */
     featuredText: prismicT.RichTextField;
     /**
+     * Approximate End Date field in *Project*
+     *
+     * - **Field Type**: Date
+     * - **Placeholder**: *None*
+     * - **API ID Path**: project.endDate
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/date
+     *
+     */
+    endDate: prismicT.DateField;
+    /**
      * Slice Zone field in *Project*
      *
      * - **Field Type**: Slice Zone

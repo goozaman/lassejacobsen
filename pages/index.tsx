@@ -14,7 +14,12 @@ export const getStaticProps = async ({
   const articles = await client.getAllByType("article");
   const about = await client.getSingle("about");
   const home = await client.getSingle("home");
-  const projects = await client.getAllByType("project");
+  const projects = await client.getAllByType("project", {
+    orderings: {
+      field: 'my.project.endDate',
+      direction: 'desc',
+    },
+  });  
 
   return {
     props: { articles, about, home, projects },
