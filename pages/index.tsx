@@ -6,6 +6,7 @@ import { PrismicRichText, PrismicText } from "@prismicio/react";
 import { Heading } from "../components/Heading";
 import { Bounded } from "../components/Bounded";
 import { ProjectPreview } from "../components/ProjectPreview";
+import { ContactForm } from "../components/ContactForm";
 
 export const getStaticProps = async ({
   previewData,
@@ -20,17 +21,17 @@ export const getStaticProps = async ({
       direction: "desc",
     },
   });
+  const contact = await client.getSingle("contact");
 
   return {
-    props: { articles, about, home, projects },
+    props: { articles, about, home, projects, contact },
   };
 };
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const HomePage: React.FC<HomePageProps> = ({
-  articles,
-  about,
+  contact,
   home,
   projects,
 }) => {
@@ -56,16 +57,37 @@ const HomePage: React.FC<HomePageProps> = ({
         </Bounded>
       </div>
 
-      <div className="bg-slate-800 text-white">
-        <Bounded as="section" size="widest">
-          Contact me
-        </Bounded>
+      <div className="">
+      <Bounded
+        as="section"
+        size="widest"
+        noYPadding
+        className="px-4"
+        innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col-reverse md:flex-row md:justify-between"
+      >
+        <div className="flex w-full items-end md:max-h-full md:w-1/2">
+          <PrismicNextImage
+            className="max-h-full max-w-full object-contain"
+            field={contact.data.image}
+          />
+        </div>
+
+        <div className="flex w-full flex-col py-3 align-baseline md:w-1/3 md:pt-24 ">
+          <Heading as="h2" size="3xl" className="mb-8">
+            <PrismicText field={contact.data.title} />
+          </Heading>
+
+          <ContactForm />
+
+        </div>
+
+      </Bounded>
       </div>
     </Page>
   );
 };
 
-export const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
+const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
   return (
     <Bounded
       as="section"
