@@ -248,6 +248,30 @@ interface ProjectDocumentData {
      */
     endDate: prismicT.DateField;
     /**
+     * Show field in *Project*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: true
+     * - **API ID Path**: project.show
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    show: prismicT.BooleanField;
+    /**
+     * Current Project field in *Project*
+     *
+     * - **Field Type**: Boolean
+     * - **Placeholder**: *None*
+     * - **Default Value**: false
+     * - **API ID Path**: project.currentProject
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
+     *
+     */
+    currentProject: prismicT.BooleanField;
+    /**
      * Slice Zone field in *Project*
      *
      * - **Field Type**: Slice Zone

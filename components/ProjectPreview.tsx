@@ -16,6 +16,8 @@ interface ProjectPreviewProps {
 export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
   project,
 }) => {
+  if (!project.data.show) return null;
+  
   const featuredImage =
     (prismicH.isFilled.image(project.data.featuredImage) &&
       project.data.featuredImage) ||

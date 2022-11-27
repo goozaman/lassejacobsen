@@ -14,7 +14,7 @@
     "title": [
       {
         "type": "paragraph",
-        "text": "Eu enim ipsum excepteur ex et id velit eiusmod ad irure nostrud culpa proident magna. Lorem ad consequat excepteur consequat proident qui est aute elit ex cupidatat consequat consectetur. Eu amet nostrud elit.",
+        "text": "Officia fugiat ipsum in consectetur proident. In exercitation deserunt nulla voluptate. Magna duis esse eu aute consequat incididunt occaecat aute duis mollit Lorem.",
         "spans": []
       }
     ],
@@ -25,16 +25,18 @@
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b"
+      "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613"
     },
     "featuredText": [
       {
         "type": "paragraph",
-        "text": "Deserunt aliqua consequat enim elit id deserunt. Fugiat laborum nulla mollit. Enim adipisicing duis eiusmod cillum elit officia aute sunt officia sint nostrud culpa nisi dolor id.",
+        "text": "Do qui magna quis do qui. Ex dolore aliquip labore eiusmod mollit id.",
         "spans": []
       }
     ],
-    "endDate": "2012-05-06",
+    "endDate": "2012-01-20",
+    "show": false,
+    "currentProject": true,
     "slices": []
   }
 }
