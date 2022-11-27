@@ -1,5 +1,11 @@
 import clsx from "clsx";
-import React, { ChangeEvent, Dispatch, FunctionComponent, MutableRefObject, SetStateAction } from "react";
+import React, {
+  ChangeEvent,
+  Dispatch,
+  FunctionComponent,
+  MutableRefObject,
+  SetStateAction,
+} from "react";
 
 interface InputFieldProps {
   id: string;
@@ -20,12 +26,16 @@ export const InputField: FunctionComponent<InputFieldProps> = ({
   error,
   className,
   onChange,
-  value
+  value,
 }) => {
+  const handleChange: React.ChangeEventHandler<
+    HTMLTextAreaElement | HTMLInputElement
+  > = (e) => onChange(e.target.value);
 
-    const handleChange: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement> = (e) => onChange(e.target.value);
-
-    const inputClassName = clsx("focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none", error && "border-red-500")
+  const inputClassName = clsx(
+    "focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 shadow focus:outline-none",
+    error && "border-red-500"
+  );
   return (
     <div className={className}>
       <label
@@ -51,8 +61,7 @@ export const InputField: FunctionComponent<InputFieldProps> = ({
           placeholder={placeholder}
           onChange={handleChange}
           value={value}
-        >
-        </textarea>
+        ></textarea>
       )}
       {error && <p className="text-xs italic text-red-500">{error}</p>}
     </div>

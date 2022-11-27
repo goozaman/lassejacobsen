@@ -30,11 +30,7 @@ export const getStaticProps = async ({
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-const HomePage: React.FC<HomePageProps> = ({
-  contact,
-  home,
-  projects,
-}) => {
+const HomePage: React.FC<HomePageProps> = ({ contact, home, projects }) => {
   return (
     <Page>
       <Hero home={home} />
@@ -58,30 +54,28 @@ const HomePage: React.FC<HomePageProps> = ({
       </div>
 
       <div className="">
-      <Bounded
-        as="section"
-        size="widest"
-        noYPadding
-        className="px-4"
-        innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col-reverse md:flex-row md:justify-between"
-      >
-        <div className="flex w-full items-end md:max-h-full md:w-1/2">
-          <PrismicNextImage
-            className="max-h-full max-w-full object-contain"
-            field={contact.data.image}
-          />
-        </div>
+        <Bounded
+          as="section"
+          size="widest"
+          noYPadding
+          className="px-4"
+          innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col-reverse md:flex-row md:justify-between"
+        >
+          <div className="flex w-full items-end md:max-h-full md:w-1/2">
+            <PrismicNextImage
+              className="max-h-full max-w-full object-contain"
+              field={contact.data.image}
+            />
+          </div>
 
-        <div className="flex w-full flex-col py-3 align-baseline md:w-1/3 md:pt-24 ">
-          <Heading as="h2" size="3xl" className="mb-8">
-            <PrismicText field={contact.data.title} />
-          </Heading>
+          <div className="flex w-full flex-col py-3 align-baseline md:w-1/3 md:pt-24 ">
+            <Heading as="h2" size="3xl" className="mb-8">
+              <PrismicText field={contact.data.title} />
+            </Heading>
 
-          <ContactForm />
-
-        </div>
-
-      </Bounded>
+            <ContactForm />
+          </div>
+        </Bounded>
       </div>
     </Page>
   );

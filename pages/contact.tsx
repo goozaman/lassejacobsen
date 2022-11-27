@@ -25,7 +25,6 @@ export const getStaticProps = async ({
 type ContactPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const ContactPage: FunctionComponent<ContactPageProps> = ({ contact }) => {
-
   return (
     <Page>
       <Bounded
@@ -48,9 +47,7 @@ const ContactPage: FunctionComponent<ContactPageProps> = ({ contact }) => {
           </Heading>
 
           <ContactForm />
-
         </div>
-
       </Bounded>
     </Page>
   );
