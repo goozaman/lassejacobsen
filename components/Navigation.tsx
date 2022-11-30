@@ -12,7 +12,9 @@ export const Navigation = () => {
       innerClassName="mx-auto flex justify-between py-4"
     >
       <div className="font-sans text-lg font-semibold tracking-tighter text-slate-800">
-        Christian Lebeck
+        <Link href="/">
+          Christian Lebeck
+        </Link>
       </div>
 
       <div className="flex gap-10">
