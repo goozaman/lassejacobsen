@@ -33,7 +33,9 @@ export const getStaticProps = async ({
   params,
 }: GetStaticPropsContext) => {
   const client = createClient({ previewData });
-  const project = params ? await client.getByUID("project", params.uid as string) : undefined;
+  const project = params
+    ? await client.getByUID("project", params.uid as string)
+    : undefined;
 
   return {
     props: { project },
@@ -42,9 +44,7 @@ export const getStaticProps = async ({
 
 type ProjectProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-export const Project: React.FC<ProjectProps> = ({
-  project,
-}) => {
+export const Project: React.FC<ProjectProps> = ({ project }) => {
   if (!project)
     return (
       <div>
@@ -53,14 +53,16 @@ export const Project: React.FC<ProjectProps> = ({
       </div>
     );
 
-
   return (
     <Page>
       <Head>
         <title>{prismicH.asText(project.data.title)}</title>
       </Head>
       <Bounded className="pb-0" innerClassName="pb-0">
-        <Link href="/" className="font-semibold tracking-tight text-slate-400 pb-8">
+        <Link
+          href="/"
+          className="pb-8 font-semibold tracking-tight text-slate-400"
+        >
           &larr; Back
         </Link>
       </Bounded>
@@ -77,6 +79,5 @@ export const Project: React.FC<ProjectProps> = ({
     </Page>
   );
 };
-
 
 export default Project;

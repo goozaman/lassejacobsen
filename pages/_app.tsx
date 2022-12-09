@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../node_modules/react-vis/dist/style.css";
 import type { AppProps } from "next/app";
 import Link from "next/link";
 import {
