@@ -104,6 +104,7 @@ const Hero: React.FC<Pick<HomePageProps, "home">> = ({ home }) => {
         <PrismicNextImage
           className="max-h-full max-w-full object-contain"
           field={home.data.heroImage}
+          priority
         />
       </div>
 
