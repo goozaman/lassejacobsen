@@ -8,7 +8,7 @@ export const Page: FunctionComponent<PageProps> = ({ children }) => {
   return (
     <div className="m-0 h-full w-full p-0 text-slate-700">
       <Head>
-        <title>Christian Lebeck</title>
+        <title>Lasse Yori Jacobsen</title>
         <meta
           name="description"
           content="Content sharing website by Christian Lebeck"

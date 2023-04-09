@@ -1,6 +1,8 @@
 {
-  "apiEndpoint": "https://christianlebeck.prismic.io/api/v2",
-  "libraries": ["@/slices"],
+  "apiEndpoint": "https://lassejacobsen.prismic.io/api/v2",
+  "libraries": [
+    "@/slices"
+  ],
   "_latest": "0.5.2",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
   "generateType": ".slicemachine/prismicio.d.ts"

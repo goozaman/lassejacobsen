@@ -16,27 +16,20 @@ interface ProjectPreviewProps {
 export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
   project,
 }) => {
-  if (!project.data.show) return null;
 
-  const featuredImage =
-    (prismicH.isFilled.image(project.data.featuredImage) &&
-      project.data.featuredImage) ||
-    findFirstImage(project.data.slices);
 
   return (
     <div className="flex w-full flex-col justify-between md:max-w-[40%]">
-      {/* <PrismicLink document={project} className="mb-4"> */}
-      {prismicH.isFilled.image(featuredImage) && (
-        <PrismicNextImage field={featuredImage} />
-      )}
-      {/* </PrismicLink> */}
+  
+        <img src={project.image} />
+
       <div className="mb-6">
         <Heading as="h3" size="2xl" className="mb-4">
-          {/* <PrismicLink document={project}> */}
-          <PrismicText field={project.data.title} />
-          {/* </PrismicLink> */}
+
+           {project.title}
+
         </Heading>
-        <PrismicText field={project.data.featuredText} />
+        {project.featuredText} 
       </div>
     </div>
   );

@@ -45,7 +45,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
         className="mb-4"
         id="name"
         label="Name"
-        placeholder="John Doe"
+        placeholder="Your Name"
         onChange={setName}
         value={name}
       />
@@ -54,7 +54,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
         className="mb-4"
         id="email"
         label="Email"
-        placeholder="johndoe@awesome.com"
+        placeholder="ýouremail@here.com"
         onChange={setEmail}
         value={email}
       />
@@ -64,7 +64,7 @@ export const ContactForm: FunctionComponent<ContactFormProps> = ({
         id="message"
         label="Message"
         rows={10}
-        placeholder="Hey Christian! Have you ever ...?"
+        placeholder="Hey Lasse!"
         onChange={setMessage}
         value={message}
       />
