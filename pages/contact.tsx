@@ -12,19 +12,19 @@ import { createClient } from "../prismicio";
 export const getStaticProps = async ({
   previewData,
 }: GetStaticPropsContext) => {
-  const client = createClient({ previewData });
-  const articles = await client.getAllByType("article");
-  const about = await client.getSingle("about");
-  const contact = await client.getSingle("contact");
+  // const client = createClient({ previewData });
+  // const articles = await client.getAllByType("article");
+  // const about = await client.getSingle("about");
+  // const contact = await client.getSingle("contact");
 
   return {
-    props: { articles, about, contact },
+    props: {  },
   };
 };
 
 type ContactPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
-const ContactPage: FunctionComponent<ContactPageProps> = ({ contact }) => {
+const ContactPage: FunctionComponent<ContactPageProps> = ({ }) => {
   return (
     <Page>
       <Bounded
@@ -40,7 +40,7 @@ const ContactPage: FunctionComponent<ContactPageProps> = ({ contact }) => {
 
         <div className="flex w-full flex-col pt-3 align-baseline md:w-1/2 md:pt-24 ">
           <Heading as="h2" size="3xl" className="mb-8">
-            <PrismicText field={contact.data.title} />
+            Contact
           </Heading>
 
           <ContactForm />

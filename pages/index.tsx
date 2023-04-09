@@ -58,7 +58,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     title:"IDA Future STEM Leaders ",
     image:"idastem.jpg",
     link:"diplom.pdf",
-    linktext:"View my diploma here.", 
+    linktext:"View my diploma here.",
     id:"4",
   }
   ]
@@ -100,7 +100,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
           noYPadding
           className="px-4"
           innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col-reverse md:flex-row md:justify-between"
-        >        
+        >
         {/*
           <div className="flex w-full items-end md:max-h-full md:w-1/2">
           </div>
@@ -129,7 +129,7 @@ const Hero: React.FC = ({  }) => {
     >
       <div className="flex w-full flex-col pt-3 align-baseline md:w-1/2 md:pt-36 md:pr-12">
         <Heading as="h2">
-          {"Hi, I'm Lasse, a newly graduated M.Sc. electronic engineer from DTU, with an interest in electronics, acoustics, and entrepreneurship."} 
+          {"Hi, I'm Lasse, a newly graduated M.Sc. electronic engineer from DTU, with an interest in electronics, acoustics, and entrepreneurship."}
         </Heading>
 
         <div className="mt-6" style={{whiteSpace:"break-spaces"}}>
@@ -138,12 +138,13 @@ const Hero: React.FC = ({  }) => {
 I am a quick learner and an excellent problem-solver, which makes me well-equipped to navigate the challenges that come within engineering. I am eager to collaborate with others, build a strong team, and make my vision a reality.
 
 If you're looking for a young and innovative electronic engineer with an entrepreneurial spirit, look no further than me. With my passion for electronics and his drive to succeed, I am motivated to create the tech solutions of tomorrow!
-`} 
+`}
         </div>
       </div>
 
       <div className="flex w-full items-end md:max-h-full md:w-1/2 md:pl-12">
         <img
+            alt={'hero-image'}
           className="max-h-full max-w-full object-contain"
           src={"hjemmesidebillede.png"}
                   />

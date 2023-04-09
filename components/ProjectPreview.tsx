@@ -20,20 +20,17 @@ export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
 
   return (
     <div className="flex w-full flex-col justify-between md:max-w-[40%]">
-  
-        <img src={project.image} />
-
+      <img alt={project.title} src={project.image} />
       <div className="mb-6">
         <Heading as="h3" size="2xl" className="mb-4">
-
            {project.title}
-
         </Heading>
-        {project.featuredText} 
-        {project.link && (<br/>)}
-        {project.link && (<br/>)}
+        {project.featuredText}
+        {project.link && <br/>}
+        {project.link && <br/>}
         {project.link && (
-          <a href={project.link} style={{color:"blue",textDecoration:"underline"}} >{project.linktext}</a>)}
+          <a href={project.link} style={{color:"blue",textDecoration:"underline"}} >{project.linktext}</a>
+        )}
       </div>
     </div>
   );
