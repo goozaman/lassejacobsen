@@ -142,12 +142,15 @@ If you're looking for a young and innovative electronic engineer with an entrepr
         </div>
       </div>
 
-      <div className="flex w-full items-end md:max-h-full md:w-1/2 md:pl-12">
-        <img
-            alt={'hero-image'}
-          className="max-h-full max-w-full object-contain"
-          src={"hjemmesidebillede.png"}
-                  />
+      <div className="flex w-full items-end md:max-h-full md:w-1/2 md:pl-12" style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
+        <img alt={'hero-image'}
+            className="max-h-full max-w-full object-contain"
+            src={"hjemmesidebillede.png"}
+        />
       </div>
 
       <div className="absolute bottom-0 left-[calc(50%-6px)] text-2xl">↓</div>
