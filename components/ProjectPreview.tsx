@@ -10,7 +10,7 @@ import { Heading } from "./Heading";
 import * as prismicH from "@prismicio/helpers";
 
 interface ProjectPreviewProps {
-  project: ProjectDocument<string>;
+  project: any;
 }
 
 export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
