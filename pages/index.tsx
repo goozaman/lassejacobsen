@@ -35,26 +35,31 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     featuredText:"For my thesis, I collaborated with Hottinger Brüel & Kjær to develop a beamforming microphone array. Using Altium, I designed both the schematic and PCB, and conducted thorough electrical and acoustic testing. HBK is a prominent provider of integrated measurement and testing solutions across multiple industries, including aerospace, automotive, and energy.",
     title:"M.Sc. Thesis",
     image:"mscpic.png",
+    id:"0",
   },{
     featuredText:"As part of my project work, I collaborated with Harman Automotive and B&O to implement and measure the effectiveness of a tactile feedback system that enhances the alertness and immersive experience for car drivers. The system utilizes a vibrational transducer mounted on the car seat to simulate the engine vibration in a combustion engine car. Harman Automotive is a leading company that specializes in designing and developing audio and infotainment solutions for the automotive industry.",
     title:"Harman Automotive",
     image:"harmanpic.png",
+    id:"1",
   },{
     featuredText:"As a member of the advisory board for the newly founded company DockMe, I provide guidance and strategic advice to the management team on a range of business areas such as market analysis, product development, fundraising, and business strategy. Additionally, I offer networking opportunities and introduce potential investors or customers to the startup. My focus is to help the startup navigate challenges and opportunities and to provide valuable insights to support its growth and success. I have helped DockMe receive funding of approximately 100.000 DKK, as well as the recruitment of two new founders. DockMe is making an IoT solution for digitalizing harbors, following the United Nation goal Sustainable cities and communities (SDG 11). ",
     title:"DockMe",
     image:"dockme.png",
+    id:"2",
   }
   ]
   const education = [{
     featuredText:"DTU has equipped me with a robust understanding of the theoretical concepts of electronics engineering and practical experience in designing, implementing, and testing electronic systems. As a result, I have acquired diverse skills and knowledge in numerous areas, including digital and analog circuits, communication systems, signal processing, control systems, and embedded systems. Moreover, I have gained experience in acoustics and entrepreneurship by working as a teaching assistant for the X-Tech Entrepreneurship course. DTU is a leading international institution in the field of engineering, science, and technology. With a strong focus on innovation and entrepreneurship, DTU aims to create solutions that can benefit society and contribute to the sustainable development of the world.",
     title:"DTU M.Sc. Electronics Engineering",
     image:"dtu.png",
+    id:"3",
   },{
     featuredText:"IDA Future STEM Leaders is a program initiated by IDA that seeks to inspire and support the next generation of leaders in science, technology, engineering, and mathematics (STEM) fields. The program aims to identify university students who demonstrate exceptional potential in STEM and provide them with opportunities for personal and academic growth. The program includes a range of activities such as mentorship, networking events, STEM workshops, and leadership training sessions. I was chosen as 1 of 60 students to join the course.",
     title:"IDA Future STEM Leaders ",
     image:"idastem.jpg",
     link:"diplom.pdf",
     linktext:"View my diploma here.", 
+    id:"4",
   }
   ]
   return (
@@ -113,7 +118,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
   );
 };
 
-const Hero: React.FC<Pick<HomePageProps, "home">> = ({  }) => {
+const Hero: React.FC = ({  }) => {
   return (
     <Bounded
       as="section"
