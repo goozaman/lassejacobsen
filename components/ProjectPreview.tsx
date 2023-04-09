@@ -30,6 +30,10 @@ export const ProjectPreview: FunctionComponent<ProjectPreviewProps> = ({
 
         </Heading>
         {project.featuredText} 
+        {project.link && (<br/>)}
+        {project.link && (<br/>)}
+        {project.link && (
+          <a href={project.link} style={{color:"blue",textDecoration:"underline"}} >{project.linktext}</a>)}
       </div>
     </div>
   );

@@ -17,8 +17,9 @@ export const Navigation = () => {
 
       <div className="flex gap-10">
         <NavItem href="/">About</NavItem>
+        <NavItem href="https://www.linkedin.com/in/lasseyj/">LinkedIn</NavItem>
         {/* <NavItem href="/articles">Articles</NavItem> */}
-        <NavItem href="/contact">Contact</NavItem>
+        <NavItem href="mailto:hhlassej@gmail.com">Contact</NavItem>
       </div>
     </Bounded>
   );

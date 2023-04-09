@@ -14,7 +14,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<{}>) {
 
   const mailData = {
     from: `${req.body.name} <${req.body.email}>`,
-    to: "contact@christianlebeck.com",
+    to: "hhlassej@gmail.com",
     subject: `Message From ${req.body.name}`,
     text: req.body.message + " | Sent from: " + req.body.email,
     html: `<div>${req.body.message}</div>

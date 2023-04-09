@@ -35,10 +35,7 @@ const ContactPage: FunctionComponent<ContactPageProps> = ({ contact }) => {
         innerClassName="h-full flex md:flex-row md:gap-0 gap-10 flex-col-reverse md:flex-row"
       >
         <div className="flex w-full items-end md:max-h-full md:w-full">
-          <PrismicNextImage
-            className="max-h-full max-w-full object-contain"
-            field={contact.data.image}
-          />
+          
         </div>
 
         <div className="flex w-full flex-col pt-3 align-baseline md:w-1/2 md:pt-24 ">
