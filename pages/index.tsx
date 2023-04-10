@@ -34,16 +34,16 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
   const projects = [{
     featuredText:"For my thesis, I collaborated with Hottinger Brüel & Kjær to develop a beamforming microphone array. Using Altium, I designed both the schematic and PCB, and conducted thorough electrical and acoustic testing. HBK is a prominent provider of integrated measurement and testing solutions across multiple industries, including aerospace, automotive, and energy.",
     title:"M.Sc. Thesis",
-    image:"mscpic.png",
+    image:"m.png",
     id:"0",
   },{
-    featuredText:"As part of my project work, I collaborated with Harman Automotive and B&O to implement and measure the effectiveness of a tactile feedback system that enhances the alertness and immersive experience for car drivers. The system utilizes a vibrational transducer mounted on the car seat to simulate the engine vibration in a combustion engine car. Harman Automotive is a leading company that specializes in designing and developing audio and infotainment solutions for the automotive industry.",
-    title:"Harman Automotive",
+    featuredText:"As part of my project work at DTU, I collaborated with Harman Automotive and B&O to implement and measure the effectiveness of a tactile feedback system that enhances the alertness and immersive experience for car drivers. The system utilizes a vibrational transducer mounted on the car seat to simulate the engine vibration in a combustion engine car. Harman Automotive is a leading company that specializes in designing and developing audio and infotainment solutions for the automotive industry.",
+    title:"Tactical Feedback - Project",
     image:"harmanpic.png",
     id:"1",
   },{
     featuredText:"As a member of the advisory board for the newly founded company DockMe, I provide guidance and strategic advice to the management team on a range of business areas such as market analysis, product development, fundraising, and business strategy. Additionally, I offer networking opportunities and introduce potential investors or customers to the startup. My focus is to help the startup navigate challenges and opportunities and to provide valuable insights to support its growth and success. I have helped DockMe receive funding of approximately 100.000 DKK, as well as the recruitment of two new founders. DockMe is making an IoT solution for digitalizing harbors, following the United Nation goal Sustainable cities and communities (SDG 11). ",
-    title:"DockMe",
+    title:"DockMe - Advisory Board",
     image:"dockme.png",
     id:"2",
   }
@@ -85,6 +85,9 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
          <Heading as="h2" className="mb-5">
             Education
           </Heading>
+          <p className="mb-10">
+            Here you can read about my educational background and certifications:
+          </p>
           <div className="flex flex-col flex-wrap justify-between gap-x-2 gap-y-6 md:flex-row">
             {education.map((project) => (
               <ProjectPreview key={project.id} project={project} />
