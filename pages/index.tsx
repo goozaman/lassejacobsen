@@ -48,18 +48,38 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     id:"2",
   }
   ]
+    const work = [{
+    featuredText:"",
+    title:"Oticon - Acoustics & Simulations R&D",
+    image:"oticon.png",
+    id:"3",
+  },{
+    featuredText:"",
+    title:"Teaching Assistant - DTU X-Tech Entrepreneurship",
+    image:"xtech.png",
+    link:"anbefaling.pdf",
+    linktext:"View my work reccomendation and reference here.",
+    id:"4",
+  }
+  ,{
+    featuredText:"",
+    title:"Kamstrup - Internship + Student Assistant Electricity Meters Hardware R&D",
+    image:"kamstrup.png",
+    id:"5",
+  }
+  ]
   const education = [{
     featuredText:"DTU has equipped me with a robust understanding of the theoretical concepts of electronics engineering and practical experience in designing, implementing, and testing electronic systems. As a result, I have acquired diverse skills and knowledge in numerous areas, including digital and analog circuits, communication systems, signal processing, control systems, and embedded systems. Moreover, I have gained experience in acoustics and entrepreneurship by working as a teaching assistant for the X-Tech Entrepreneurship course. DTU is a leading international institution in the field of engineering, science, and technology. With a strong focus on innovation and entrepreneurship, DTU aims to create solutions that can benefit society and contribute to the sustainable development of the world.",
     title:"DTU M.Sc. Electronics Engineering",
     image:"dtu.png",
-    id:"3",
+    id:"6",
   },{
     featuredText:"IDA Future STEM Leaders is a program initiated by IDA that seeks to inspire and support the next generation of leaders in science, technology, engineering, and mathematics (STEM) fields. The program aims to identify university students who demonstrate exceptional potential in STEM and provide them with opportunities for personal and academic growth. The program includes a range of activities such as mentorship, networking events, STEM workshops, and leadership training sessions. I was chosen as 1 of 60 students to join the course.",
     title:"IDA Future STEM Leaders ",
     image:"idastem.jpg",
     link:"diplom.pdf",
     linktext:"View my diploma here.",
-    id:"4",
+    id:"7",
   }
   ]
   return (
@@ -78,6 +98,18 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
 
           <div className="flex flex-col flex-wrap justify-between gap-x-2 gap-y-6 md:flex-row">
             {projects.map((project) => (
+              <ProjectPreview key={project.id} project={project} />
+            ))}
+          </div>
+          <div style={{marginTop:40}}/>
+         <Heading as="h2" className="mb-5">
+            Work
+          </Heading>
+          <p className="mb-10">
+            Here you can read about my work experience:
+          </p>
+          <div className="flex flex-col flex-wrap justify-between gap-x-2 gap-y-6 md:flex-row">
+            {work.map((project) => (
               <ProjectPreview key={project.id} project={project} />
             ))}
           </div>
