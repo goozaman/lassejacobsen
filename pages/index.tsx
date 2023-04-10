@@ -32,7 +32,7 @@ type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 const HomePage: React.FC<HomePageProps> = ({}) => {
   const projects = [{
-    featuredText:"For my thesis, I collaborated with Hottinger Brüel & Kjær to develop a beamforming microphone array. Using Altium, I designed both the schematic and PCB, and conducted thorough electrical and acoustic testing. HBK is a prominent provider of integrated measurement and testing solutions across multiple industries, including aerospace, automotive, and energy.",
+    featuredText:"For my thesis, I collaborated with Hottinger Brüel & Kjær to develop a beamforming microphone array, utilizing MEMS microphones and the XMOS advanced DSP processing platform. Using Altium, I designed both the schematic and PCB, and conducted thorough electrical and acoustic testing. My thesis also contained acoustic simulations, simulating a microphone beamforming array in different conditions. HBK is a prominent provider of integrated measurement and testing solutions across multiple industries, including aerospace, automotive, and energy.",
     title:"M.Sc. Thesis",
     image:"m.png",
     id:"0",
@@ -49,12 +49,12 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
   }
   ]
     const work = [{
-    featuredText:"",
+    featuredText:"I've worked for two years as a student assistant at Oticon in the Acoustics and Simulations group, working both with developing software, primarily a MATLAB GUI that simulated different hearing losses, as well as hardware-related tests following the given ISO standards for hearing aids. Oticon is a leading hearing aid company that uses cutting-edge technology to create personalized solutions for individuals with hearing loss. ",
     title:"Oticon - Acoustics & Simulations R&D",
     image:"oticon.png",
     id:"3",
   },{
-    featuredText:"",
+    featuredText:"I have functioned as a teaching assistant in the course X-Tech Entrepreneurship. The DTU X-Tech Entrepreneurship course is a unique opportunity for students to learn the fundamentals of starting and growing a tech startup. Taught by experienced entrepreneurs and industry experts, the course covers topics such as ideation, market validation, business planning, funding, and more. Through hands-on exercises and real-world case studies, students will gain the knowledge and skills necessary to launch their own successful tech ventures.",
     title:"Teaching Assistant - DTU X-Tech Entrepreneurship",
     image:"xtech.png",
     link:"anbefaling.pdf",
@@ -62,7 +62,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     id:"4",
   }
   ,{
-    featuredText:"",
+    featuredText:"I had a six months internship at Kamstrup, followed by a job as a student assistant in the same department. During my internship, I developed a PCB for electricity meter testing. Kamstrup is a global leader in intelligent energy and water metering solutions, providing accurate and reliable data for utility companies. Their products are designed to help reduce energy and water waste, lower costs, and improve sustainability. Kamstrup also offers advanced analytics and software solutions to support efficient energy and water management.",
     title:"Kamstrup - Internship + Student Assistant Electricity Meters Hardware R&D",
     image:"kamstrup.png",
     id:"5",
