@@ -58,7 +58,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     title:"Teaching Assistant - DTU X-Tech Entrepreneurship",
     image:"xtech.png",
     link:"anbefaling.pdf",
-    linktext:"View my work reccomendation and reference here.",
+    linktext:"View my work recommendation and reference here.",
     id:"4",
   }
   ,{
@@ -172,7 +172,7 @@ const Hero: React.FC = ({  }) => {
 
 I am a quick learner and an excellent problem-solver, which makes me well-equipped to navigate the challenges that come within engineering. I am eager to collaborate with others, build a strong team, and make my vision a reality.
 
-If you're looking for a young and innovative electronic engineer with an entrepreneurial spirit, look no further than me. With my passion for electronics and his drive to succeed, I am motivated to create the tech solutions of tomorrow!
+If you're looking for a young and innovative electronic engineer with an entrepreneurial spirit, look no further than me. With my passion for electronics and my drive to succeed, I am motivated to create the tech solutions of tomorrow!
 `}
         </div>
       </div>
