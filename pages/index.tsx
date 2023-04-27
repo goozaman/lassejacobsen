@@ -47,6 +47,12 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     image:"dockme.png",
     id:"2",
   }
+  ,{
+    featuredText:"I have made a small startup, utilizing my interest in acoustics + electronics, and knowledge within the entrepreneurship world. I recieved a startup grant from the danish fund of entreprenurship, to begin developing the first prototype. The In-ear monitors are made using in house designed acoustical solutions, as well as parts from danish companies, such as Estron and Sonion. Technologies found in hearing aids are also used. Nautilus Acoustics is working on developing in-ear monitors for professional musicians as well as audiophiles who are interested in high-quality sound. Everything is produced and handmade in Denmark with a focus on sound quality. I primarily sell to audiophiles, and acousticians and musicians. ",
+    title:"Nautilus Acoustics",
+    image:"Nautilus_Acoustics_Logo_Version_2.png",
+    id:"8",
+  }
   ]
     const work = [{
     featuredText:"I've worked for two years as a student assistant at Oticon in the Acoustics and Simulations group, working both with developing software, primarily a MATLAB GUI that simulated different hearing losses, as well as hardware-related tests following the given ISO standards for hearing aids. Oticon is a leading hearing aid company that uses cutting-edge technology to create personalized solutions for individuals with hearing loss. ",
