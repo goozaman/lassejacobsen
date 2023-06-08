@@ -54,7 +54,11 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     id:"8",
   }
   ]
-    const work = [{
+    const work = [    {
+    featuredText:"I currently work as a Research Engineer in the Performance & Emission Group at MAN Energy Solutions. MAN are the global leaders in developing propulsion engines and solutions for merchant vessels. My role involves planning and coordinating measurement assignments, acquiring and calibrating measurement equipment, executing on-site measurements, and evaluating and reporting the results. I am also developing cutting-edge measurement technology solutions to optimize our work processes. I travel for approximately 120 days per year, primarily to South Korea and Japan. ",
+    title:"MAN ES - Research and Test Engineer R&D",
+    image:"man.png",
+    id:"9",{
     featuredText:"I've worked for two years as a student assistant at Oticon in the Acoustics and Simulations group, working both with developing software, primarily a MATLAB GUI that simulated different hearing losses, as well as hardware-related tests following the given ISO standards for hearing aids. Oticon is a leading hearing aid company that uses cutting-edge technology to create personalized solutions for individuals with hearing loss. ",
     title:"Oticon - Acoustics & Simulations R&D",
     image:"oticon.png",
