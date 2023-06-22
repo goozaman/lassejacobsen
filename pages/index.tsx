@@ -60,7 +60,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     image:"man.png",
     id:"9",
   },{
-    featuredText:"I've worked for two years as a student assistant at Oticon in the Acoustics and Simulations group, working both with developing software, primarily a MATLAB GUI that simulated different hearing losses, as well as hardware-related tests following the given ISO standards for hearing aids. Oticon is a leading hearing aid company that uses cutting-edge technology to create personalized solutions for individuals with hearing loss. ",
+    featuredText:"I've worked for two years as a student assistant at Oticon in the Acoustics and Simulations group, working both with developing software, primarily a MATLAB GUI that simulated different hearing losses, a MATLAB GUI for easy plotting measurements of Balanced Armatures, as well as hardware-related tests following the given ISO standards for hearing aids. My student job at Oticon has given me a lot of knowledge within acoustics, hearing impairment, MATLAB GUI and data visualization.  Oticon is a leading hearing aid company that uses cutting-edge technology to create personalized solutions for individuals with hearing loss. ",
     title:"Oticon - Acoustics & Simulations R&D",
     image:"oticon.png",
     id:"3",
